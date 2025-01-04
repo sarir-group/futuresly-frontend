@@ -1,10 +1,7 @@
 export default async function Page({
   params,
 }: {
-  params: {
-    siteHost: string;
-    path: string;
-  };
+  params: Promise<{ path: string; siteHost: string }>;
 }) {
   const { path, siteHost } = await params
   return (
