@@ -1,0 +1,9 @@
+{
+  "app": "futuresly-frontend",
+  "port": 3000,
+  "build": {
+    "cache": true,
+    "location": "iran"
+  },
+  "disks": []
+}
