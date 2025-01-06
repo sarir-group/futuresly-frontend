@@ -4,11 +4,12 @@ export const getValidSubdomain = (host?: string | null) => {
     host = window.location.host;
   }
   if (host && host.includes('.')) {
-    console.log('host:', host);
-    console.log('host.split(\'.\'):', host.split('.'));
-    const candidate = host.split('.')[0];
-    if (candidate && !candidate.includes('localhost')) {
-      subdomain = candidate;
+    const parts = host.split('.');
+    if (parts.length > 2) {
+      const candidate = parts[0];
+      if (candidate && !candidate.includes('localhost')) {
+        subdomain = candidate;
+      }
     }
   }
   return subdomain;
