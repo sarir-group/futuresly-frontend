@@ -3,10 +3,10 @@ import { getTranslations, getLocale } from 'next-intl/server';
 export default async function Page({
   params,
 }: {
-  params: Promise<{ site: string; keys?: string }>
+  params: Promise<{ site: string; slug?: [string] }>
 }) {
 
-  const { site, keys } = await params;
+  const { site, slug } = await params;
   const t = await getTranslations('HomePage');
   const locale = await getLocale();
 
@@ -17,8 +17,7 @@ export default async function Page({
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-xs">
         <div>site: {site.toString()}</div>
-        <div>{keys && <>keys: {keys?.toString()}</>}</div>
-        <div>locale: {locale}</div>
+        <div>{slug && <>/{locale}/{(slug || [])?.join('/')}</>}</div>
         <div>{t('title')}</div>
       </footer>
     </div>
