@@ -3,7 +3,7 @@ import { getTranslations, getLocale } from 'next-intl/server';
 export default async function Page({
   params,
 }: {
-  params: Promise<{ subdomain: string; keys: string }>
+  params: Promise<{ subdomain: string; keys?: string }>
 }) {
 
   const { subdomain, keys } = await params;
@@ -17,7 +17,7 @@ export default async function Page({
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-xs">
         <div>subdomain: {subdomain.toString()}</div>
-        <div>keys: {keys.toString()}</div>
+        <div>{keys && <>keys: {keys?.toString()}</>}</div>
         <div>locale: {locale}</div>
         <div>{t('title')}</div>
       </footer>
