@@ -16,8 +16,8 @@ export default async function Page({
         futuresly
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-xs">
-        <div>main</div>
-        <div>{slug && <>page/{locale}/{(slug || [])?.join('/')}</>}</div>
+        <div>site: main</div>
+        <div>{slug && <>/{locale}page/{(slug || [])?.join('/')}</>}</div>
         <div>{t('title')}</div>
       </footer>
     </div>
