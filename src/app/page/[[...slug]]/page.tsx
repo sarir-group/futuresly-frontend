@@ -17,7 +17,7 @@ export default async function Page({
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-xs">
         <div>site: main</div>
-        <div>{slug && <>/{locale}page/{(slug || [])?.join('/')}</>}</div>
+        <div>{slug && <>/{locale}/page/{(slug || [])?.join('/')}</>}</div>
         <div>{t('title')}</div>
       </footer>
     </div>
